@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.ucsb.cs.cs185.seanshelton.seansheltonscores.MainActivity">
+
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/datePicker"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"
+        android:minDate="@string/minDate"
+        android:maxDate="@string/maxDate"/>
+
+    <EditText
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/team1Score"
+        android:layout_below="@id/datePicker"
+        android:layout_alignParentRight="true" />
+
+    <AutoCompleteTextView
+        android:text="@string/team1Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/team1Name"
+        android:layout_below="@id/datePicker"/>
+
+    <EditText
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/team1Score"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/team2Score" />
+
+
+    <AutoCompleteTextView
+        android:text="@string/team2Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/team2Name"
+        android:layout_below="@+id/team1Name" />
+
+
+
+    <Button
+        android:text="@string/nextGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button" />
+
+
+</RelativeLayout>
+
+
+

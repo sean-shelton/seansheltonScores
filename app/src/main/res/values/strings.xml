@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">seansheltonScores</string>
+    <string name="minDate">08/16/2014</string>
+    <string name="maxDate">05/24/2015</string>
+    <string name="team1Name">Team 1 Name</string>
+    <string name="team2Name">Team 2 Name</string>
+    <string name="nextGameButton">Next Game</string>
+</resources>
