@@ -16,24 +16,30 @@
         android:maxDate="@string/maxDate"/>
 
     <EditText
-        android:layout_width="100px"
+        android:layout_width="@dimen/score_box_width"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
+        android:text="@string/defaultScoreValue"
         android:id="@+id/team1Score"
         android:layout_below="@id/datePicker"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true" />
 
     <AutoCompleteTextView
-        android:text="@string/team1Name"
+        android:hint="@string/team1Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/team1Name"
-        android:layout_below="@id/datePicker"/>
+        android:layout_below="@id/datePicker"
+        android:layout_toLeftOf="@id/team1Score"
+        android:layout_toStartOf="@id/team1Score"/>
 
     <EditText
-        android:layout_width="100px"
+        android:layout_width="@dimen/score_box_width"
         android:layout_height="wrap_content"
+        android:text="@string/defaultScoreValue"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/team1Score"
         android:inputType="number"
@@ -42,11 +48,13 @@
 
 
     <AutoCompleteTextView
-        android:text="@string/team2Name"
+        android:hint="@string/team2Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/team2Name"
-        android:layout_below="@+id/team1Name" />
+        android:layout_below="@+id/team1Name"
+        android:layout_toStartOf="@id/team2Score"
+        android:layout_toLeftOf="@id/team2Score"/>
 
 
 

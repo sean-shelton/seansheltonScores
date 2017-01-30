@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         //teams = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line);
 
@@ -25,18 +26,16 @@ public class MainActivity extends AppCompatActivity {
         teamName2 = (AutoCompleteTextView) findViewById(R.id.team2Name);
 
 
-        //String[] teams = getResources().getStringArray(R.array.teams);
+        String[] teams = getResources().getStringArray(R.array.teams);
 
 
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>
-                //(this, android.R.layout.simple_dropdown_item_1line,teams);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>
+                (this, android.R.layout.simple_list_item_1,teams);
 
         //ArrayAdapter<String> adapter2 = new ArrayAdapter<String>
                 //(this, android.R.layout.simple_dropdown_item_1line,teams);
 
-        //teamName1.setAdapter(teams);
-        //teamName2.setAdapter(adapter2);
-
-        setContentView(R.layout.activity_main);
+        teamName1.setAdapter(adapter);
+        teamName2.setAdapter(adapter);
     }
 }

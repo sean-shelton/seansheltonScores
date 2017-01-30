@@ -4,5 +4,6 @@
     <string name="maxDate">05/24/2015</string>
     <string name="team1Name">Team 1 Name</string>
     <string name="team2Name">Team 2 Name</string>
+    <string name="defaultScoreValue">0</string>
     <string name="nextGameButton">Next Game</string>
 </resources>
