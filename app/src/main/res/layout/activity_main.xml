@@ -12,7 +12,20 @@
         android:datePickerMode="spinner"
         android:calendarViewShown="false"
         android:minDate="@string/minDate"
-        android:maxDate="@string/maxDate"/>
+        android:maxDate="@string/maxDate"
+        android:nextFocusDown="@+id/team1Name" />
+
+
+    <AutoCompleteTextView
+        android:hint="@string/team1Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/team1Name"
+        android:layout_below="@id/datePicker"
+        android:layout_toLeftOf="@+id/team1Score"
+        android:layout_toStartOf="@id/team1Score"
+        android:nextFocusRight="@id/team1Score"
+        android:imeOptions="actionGo" />
 
     <EditText
         android:layout_width="@dimen/score_box_width"
@@ -20,19 +33,23 @@
         android:inputType="number"
         android:ems="10"
         android:text="@string/defaultScoreValue"
-        android:id="@+id/team1Score"
+        android:id="@id/team1Score"
         android:layout_below="@id/datePicker"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:nextFocusDown="@+id/team2Name"
+        android:imeOptions="actionNext"/>
 
     <AutoCompleteTextView
-        android:hint="@string/team1Name"
+        android:hint="@string/team2Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/team1Name"
-        android:layout_below="@id/datePicker"
-        android:layout_toLeftOf="@id/team1Score"
-        android:layout_toStartOf="@id/team1Score"/>
+        android:id="@id/team2Name"
+        android:layout_below="@id/team1Name"
+        android:layout_toStartOf="@+id/team2Score"
+        android:layout_toLeftOf="@id/team2Score"
+        android:nextFocusRight="@id/team2Score"
+        android:imeOptions="actionNext" />
 
     <EditText
         android:layout_width="@dimen/score_box_width"
@@ -43,19 +60,7 @@
         android:layout_below="@id/team1Score"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/team2Score" />
-
-
-    <AutoCompleteTextView
-        android:hint="@string/team2Name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/team2Name"
-        android:layout_below="@+id/team1Name"
-        android:layout_toStartOf="@id/team2Score"
-        android:layout_toLeftOf="@id/team2Score"/>
-
-
+        android:id="@id/team2Score" />
 
     <Button
         android:text="@string/nextGameButton"
@@ -63,7 +68,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button" />
+        android:id="@+id/button"
+        android:onClick="onNextGameClick"/>
 
 
 </RelativeLayout>
