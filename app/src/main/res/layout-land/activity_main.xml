@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     tools:context="edu.ucsb.cs.cs185.seanshelton.seansheltonscores.MainActivity">
 
     <DatePicker
@@ -14,86 +16,98 @@
         android:minDate="@string/minDate"
         android:maxDate="@string/maxDate"
         android:nextFocusDown="@+id/team1Name"
+        android:layout_gravity="center_vertical"
         android:layout_centerVertical="true"/>
 
-    <LinearLayout
-        android:id="@+id/team1Layout"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:paddingRight="@dimen/next_game_land_padding"
         android:layout_toRightOf="@id/datePicker"
         android:layout_toEndOf="@id/datePicker"
         android:layout_centerVertical="true">
 
-        <AutoCompleteTextView
-            android:hint="@string/team1Name"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:id="@+id/team1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+                android:hint="@string/team1Name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@id/team1Name"
+                android:nextFocusRight="@id/team1Score"
+                android:imeOptions="actionNext"
+                android:layout_weight="10"/>
+
+            <EditText
+                android:layout_width="@dimen/score_box_width"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:text="@string/defaultScoreValue"
+                android:id="@id/team1Score"
+                android:nextFocusDown="@+id/team2Name"
+                android:imeOptions="actionNext"
+                android:gravity="right"
+                android:textAlignment="gravity"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@id/team1Name"
-            android:nextFocusRight="@id/team1Score"
-            android:imeOptions="actionGo"
-            android:layout_weight="10"/>
+            android:id="@+id/team2Layout"
+            android:layout_below="@id/team1Layout"
+            android:orientation="horizontal">
 
-        <EditText
-            android:layout_width="@dimen/score_box_width"
+            <AutoCompleteTextView
+                android:hint="@string/team2Name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@id/team2Name"
+                android:nextFocusRight="@id/team2Score"
+                android:imeOptions="actionNext"
+                android:layout_weight="10"/>
+
+            <EditText
+                android:layout_width="@dimen/score_box_width"
+                android:layout_height="wrap_content"
+                android:text="@string/defaultScoreValue"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@id/team2Score"
+                android:gravity="right"
+                android:textAlignment="gravity"/>
+
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:text="@string/defaultScoreValue"
-            android:id="@id/team1Score"
-            android:nextFocusDown="@+id/team2Name"
-            android:imeOptions="actionNext"/>
+            android:layout_below="@id/team2Layout"
+            android:layout_alignRight="@id/team1Layout">
+
+            <Button
+                android:text="@string/nextGameButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/button"
+                android:onClick="onNextGameClick"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/team2Layout"
-        android:layout_below="@id/team1Layout"
-        android:layout_toEndOf="@id/datePicker"
-        android:layout_toRightOf="@id/datePicker"
-        android:orientation="horizontal">
-
-        <AutoCompleteTextView
-            android:hint="@string/team2Name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@id/team2Name"
-            android:nextFocusRight="@id/team2Score"
-            android:imeOptions="actionNext"
-            android:layout_weight="10"/>
-
-        <EditText
-            android:layout_width="@dimen/score_box_width"
-            android:layout_height="wrap_content"
-            android:text="@string/defaultScoreValue"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@id/team2Score" />
-
-    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-    <Button
-        android:text="@string/nextGameButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/button"
-        android:onClick="onNextGameClick"/>
-
-
-</RelativeLayout>
+</LinearLayout>
 
 
 
